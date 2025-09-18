@@ -19,11 +19,11 @@ def simpulate_game(num_games):
     num_wins_without_switching = sum([monty_hall_game(False) for _ in range(num_games)])
     num_wins_with_switching = sum([monty_hall_game(True) for _ in range(num_games)])
     
-    return num_wins_without_switching / num_games * 100, num_wins_with_switching / num_games * 100
+    return num_wins_without_switching, num_wins_with_switching
 
 
 if __name__ == '__main__':
   num_games = 10000
-  win_percent_without_switching, win_percentage_with_switching = simpulate_game(num_games)
-  print(f'winning prcentage without switching doors: {win_percent_without_switching}%')
-  print(f'winning prcentage with switching doors: {win_percentage_with_switching}%')
+  win_count_without_switching, win_count_with_switching = simpulate_game(num_games)
+  print(f'winning count without switching doors: {win_count_without_switching}%')
+  print(f'winning count with switching doors: {win_count_with_switching}%')
